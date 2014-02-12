@@ -1,0 +1,18 @@
+
+
+<table id="tbl-disputed" class="table table-bordered">
+	<thead>
+		<th>Customer Name</th>
+		<th>Amount</th>
+		<th>Date</th>
+	</thead>
+	<tbody>
+		<% @charges.disputed.each do |fc|%>
+		<tr>
+			<td><%= fc.customer.formal_name %></td>
+			<td><%= number_to_currency(fc.amount, :unit => "$") %></td>
+			<td><%= Time.at(fc.created).strftime("%b %d, %Y")%></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

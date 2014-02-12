@@ -1,0 +1,18 @@
+
+
+<table id="tbl-successful" class="table table-bordered">
+	<thead>
+		
+		<th>Amount</th>
+		
+	</thead>
+	<tbody>
+		<% @charges.successful.each do |fc|%>
+		<tr>
+			
+			<td><%= number_to_currency(fc.amount, :unit => "$") %></td>
+			
+		</tr>
+		<% end %>
+	</tbody>
+</table>

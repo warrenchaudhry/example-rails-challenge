@@ -1,25 +1,29 @@
-<h1>Listing charges</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @charges.each do |charge| %>
-      <tr>
-        <td><%= link_to 'Show', charge %></td>
-        <td><%= link_to 'Edit', edit_charge_path(charge) %></td>
-        <td><%= link_to 'Destroy', charge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<!-- Start Failed Charges Listing -->
+<div class="row span10 offset1">
+	<h1>Failed Charges</h1>
+	<%= render "charges/failed"%>
+</div>
+<div class="clearfix"></div>
+<hr/>
+<!-- End Failed Charges Listing -->
 
-<br>
-
-<%= link_to 'New Charge', new_charge_path %>
+<!-- Start Disputed Charges Listing -->
+<div class="row span10 offset1">
+	<h1>Disputed Charges</h1>
+	<%= render "charges/disputed" %>
+</div>
+<!-- End Disputed Charges Listing -->
+<div class="clearfix"></div>
+<hr/>
+<!-- Start Successful Charges Listing -->
+<div class="row offset1">
+	 
+	<h1>Successful Charges</h1>
+	
+	<div class="span2" style="padding-left:0;margin-left: 0;">
+	<%= render "charges/successful" %>
+	</div>
+</div>
+<!-- End Successful Charges Listing -->
