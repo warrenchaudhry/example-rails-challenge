@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function(){
+	$('.table').dataTable({
+			"bRetrieve": true, 
+			"bProcessing": true,
+			"bDestroy": true,
+			"sDom": "<'row-fluid'<'span6'T><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+			"fnDrawCallback": function( oSettings ) {
+				$('.table').find('.sorting_1').css('background', 'none')
+			}
+	});
+})

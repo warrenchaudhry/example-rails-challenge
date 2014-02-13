@@ -16,9 +16,9 @@
 	# Successful Transactions
 	
 	# 5 successful transactions for customer1
-	5.times do
+	5.times do |i|
 		customer1.charges.create!({
-				:created => Time.now.to_i,
+				:created => (Date.today - i).to_time.to_i,
 				:paid => true,
 				:amount => 4900,
 				:currency => 'usd',
@@ -27,11 +27,11 @@
 	end
 	
 	# 3 successful transactions for customer2
-	3.times do
+	3.times do |i|
 		customer2.charges.create!({
-				:created => Time.now.to_i,
+				:created => (Date.today - i).to_time.to_i,
 				:paid => true,
-				:amount => 4900,
+				:amount => 1800.76,
 				:currency => 'usd',
 				:refunded => false
 		})
@@ -41,9 +41,9 @@
 	# 1 successful transaction each for customer3 and customer4 respectively
 	
 	customer3.charges.create!({
-			:created => Time.now.to_i,
+			:created => (Date.today - 1).to_time.to_i,
 			:paid => true,
-			:amount => 4900,
+			:amount => 2867.12,
 			:currency => 'usd',
 			:refunded => false
 	})
@@ -51,7 +51,7 @@
 	customer4.charges.create!({
 			:created => Time.now.to_i,
 			:paid => true,
-			:amount => 4900,
+			:amount => 1455.98,
 			:currency => 'usd',
 			:refunded => false
 	})
@@ -61,11 +61,11 @@
 	
 	# 3 failed transactions for customer3
 	
-	3.times do 
+	3.times do |i| 
 		customer3.charges.create!({
-				:created => Time.now.to_i,
+				:created => (Date.today - i).to_time.to_i,
 				:paid => false,
-				:amount => 4900,
+				:amount => 876.13,
 				:currency => 'usd',
 				:refunded => false
 		})
@@ -73,11 +73,11 @@
 	
 	
 	# 2 failed transactions for customer4
-	2.times do 
+	2.times do |i|
 		customer4.charges.create!({
-				:created => Time.now.to_i,
+				:created => (Date.today - i).to_time.to_i,
 				:paid => false,
-				:amount => 4900,
+				:amount => 957.25,
 				:currency => 'usd',
 				:refunded => false
 		})
@@ -89,11 +89,11 @@
 	
 	# 3 disputed transactions for customer1
 	
-	3.times do 
+	3.times do |i|
 		customer1.charges.create!({
-				:created => Time.now.to_i,
+				:created => (Date.today - i).to_time.to_i,
 				:paid => true,
-				:amount => 4900,
+				:amount => 1478.82,
 				:currency => 'usd',
 				:refunded => true
 		})
@@ -101,11 +101,11 @@
 	
 	
 	# 2 disputed transactions for customer4
-	2.times do 
+	2.times do |i|
 		customer2.charges.create!({
-				:created => Time.now.to_i,
+				:created => (Date.today - i).to_time.to_i,
 				:paid => true,
-				:amount => 4900,
+				:amount => 965.10,
 				:currency => 'usd',
 				:refunded => true
 		})

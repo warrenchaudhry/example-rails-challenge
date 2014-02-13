@@ -23,4 +23,5 @@ production:
   encoding: unicode
   database: src_production
   pool: 5
+  username: war
   password: makaveli 
